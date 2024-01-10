@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+button, form, input {
+  font: inherit;
+}
+
+.inputForm label {
+  position: absolute;
+  left: -99999px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +21,148 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(54, 178, 227);
+  font-size: clamp(1rem, 2.2vh, 1.25rem);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.header {
+  padding: 1rem;
+  display: grid;
+  place-content: center;
+  color: #000;
+}
+
+.formSection {
+  width: 90%;
+  margin: 1rem;
+}
+
+.inputForm {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.inputForm input {
+  width: 76%;
+  padding-inline-start: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.inputForm button {
+  width: 20%;
+  border-radius: 8px;
+  background-color: blue;
+  color: white;
+}
+
+.inputForm input:hover, .inputForm input:focus-visible {
+  border: 2px solid goldenrod;
+}
+
+.inputForm button:hover, .inputForm button:focus-visible {
+  border: 2px solid goldenrod;
+  background-color: rgba(0, 0, 255, 0.6);
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+  width: 90%;
+}
+
+ul {
+ width: 100%
+}
+
+li {
+  width: 100%;
+  list-style-type: none;
+  margin: 0.25rem 0;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+li:nth-child(odd) {
+  background-color: bisque;
+}
+
+li:nth-child(even) {
+  background-color: cornsilk;
+}
+
+li svg:hover, li svg:focus-visible {
+  color: red;
+}
+
+.footer {
+  padding: 0.5rem;
+}
+
+
+@media screen and (min-width: 480px) {
+  body {
+    font-size: clamp(1rem, 2.2vh, 1.25rem);
+  }
+
+  .formSection {
+    width: 80%;
+  }
+
+  .main {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 780px) {
+
+  body {
+    font-size: clamp(1.15rem, 2.5vh, 1.4rem);
+  }
+
+  .formSection {
+    width: 70%;
+  }
+
+  .main {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  body {
+    font-size: clamp(1.25rem, 2.7vh, 1.75rem);
+  }
+
+  .formSection {
+    width: 50%;
+  }
+
+  .main {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .formSection {
+    width: 40%;
+  }
+
+  .main {
+    width: 40%;
+  }
 }
